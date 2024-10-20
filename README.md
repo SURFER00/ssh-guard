@@ -1,7 +1,5 @@
 # SSH-Guard
 
-## Overview
-
 **SSH-Guard** is a secure and flexible server application that provides an abstraction layer for executing pre-defined SSH commands on remote servers. This application makes use of a RESTful API to expose SSH commands, allowing you to execute them via POST requests without the need to directly connect to the target systems.
 
 ### Key Features
