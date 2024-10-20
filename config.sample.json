@@ -1,0 +1,49 @@
+{
+    "api_tokens": [
+      {
+        "token": "token123",
+        "permissions": {
+          "allowed_servers": ["web_server_1", "db_server"],
+          "allowed_command_names": ["check_disk", "check_uptime", "restart_apache"]
+        }
+      },
+      {
+        "token": "token456",
+        "permissions": {
+          "allowed_servers": ["db_server"],
+          "allowed_command_names": ["reboot_server", "restart_apache"]
+        }
+      }
+    ],
+    "commands": {
+      "check_disk": {
+        "command": "df -h",
+        "description": "Check disk space usage"
+      },
+      "check_uptime": {
+        "command": "uptime",
+        "description": "Check server uptime"
+      },
+      "restart_apache": {
+        "command": "systemctl restart apache2",
+        "description": "Restart the Apache web server"
+      },
+      "reboot_server": {
+        "command": "reboot",
+        "description": "Reboot the server"
+      }
+    },
+    "ssh_servers": {
+      "web_server_1": {
+        "hostname": "192.168.1.10",
+        "username": "user1",
+        "private_key": "/path/to/private/key1"
+      },
+      "db_server": {
+        "hostname": "192.168.1.20",
+        "username": "user2",
+        "private_key": "/path/to/private/key2"
+      }
+    }
+  }
+  

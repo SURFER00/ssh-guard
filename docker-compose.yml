@@ -1,0 +1,10 @@
+services:
+  ssh-guard:
+    build: .
+    container_name: ssh-guard
+    restart: always
+    volumes:
+      - ./config.json:/app/config.json:ro
+      - ./id_ed25519:/data/id_ed25519:ro
+    ports:
+      - 5000:5000
