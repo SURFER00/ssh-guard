@@ -31,3 +31,9 @@
    ```bash
    docker compose up -d --build
    ```
+   
+## Example Request
+
+   ```bash
+   curl 'http://ssh-guard:5000/run-command' -X POST -H 'X-Api-Key: token123' -H 'Content-Type: application/json' --data-raw '{"server_name": "web_server_1", "command_name": "check_uptime"}'
+   ```
