@@ -1,4 +1,4 @@
-import json, logging, paramiko
+import json, logging, paramiko, signal, sys
 from flask import Flask, request, jsonify
 from time import time
 from waitress import serve
@@ -167,7 +167,13 @@ def run_command():
         return jsonify({'error': str(e)}), 500
 
 
-if __name__ == '__main__':        
+if __name__ == '__main__':
+    def handle_exit(signum, frame):
+        print("\nReceived exit signal. Exiting...")
+        sys.exit(0)
+        
+    signal.signal(signal.SIGINT, handle_exit)
+    signal.signal(signal.SIGTERM, handle_exit)        
     # Load the config file
     with open('config.json') as f:
         config_data = json.load(f)
