@@ -1,4 +1,4 @@
-from alpine:3.22.1
+from alpine:3.22.2
 RUN apk add python3 py3-flask py3-requests py3-waitress py3-paramiko
 COPY --chmod=755 server.py /app/server.py
 COPY --chmod=700 config.sample.json /app/config.json
